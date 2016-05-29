@@ -51,14 +51,26 @@ job("${basepath}/mtest-deploy") {
       branch('master')
     }
   }
-  triggers {
-      scm('H/2 * * * *')
-  }
   steps {
       maven('dependency:copy')
   }
 }
 
+
+
+job("${basepath}/mtest-loadtest") {
+  scm {
+    git {
+      remote {
+        url("http://10.236.246.220:9090/crodav/mtest-loadtest.git")
+      }
+      branch('master')
+    }
+  }
+  steps {
+      maven('gatling:execute')
+  }
+}
 
 
 

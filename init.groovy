@@ -1,5 +1,8 @@
 def basepath='mtest'
 
+folder("${basepath}") {
+}
+
 job("${basepath}/mtest-dep") {
   scm {
     git {
@@ -39,8 +42,7 @@ job("${basepath}/mtest-web-project") {
 
 listView('mtest') {
   jobs {
-    name('${basepath}/mtest-dep')
-    name('${basepath}/mtest-web-project')
+    name(${basepath}")
   }
   columns {
       status()

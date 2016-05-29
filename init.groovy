@@ -2,7 +2,7 @@ job("mtest-dep") {
   scm {
       git {
           remote {
-            github("http://10.236.246.220:9090/crodav/mtest-dep.git")
+            git("http://10.236.246.220:9090/crodav/mtest-dep.git")
           }
           createTag(false)
       }
@@ -19,7 +19,7 @@ job("mtest-web-project") {
   scm {
       git {
           remote {
-            github("http://10.236.246.220:9090/crodav/mtest-web-project.git")
+            git("http://10.236.246.220:9090/crodav/mtest-web-project.git")
           }
           createTag(false)
       }

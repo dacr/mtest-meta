@@ -42,7 +42,7 @@ job("${basepath}/mtest-web-project") {
 
 listView('mtest') {
   jobs {
-    name(${basepath}")
+    name("${basepath}")
   }
   columns {
       status()

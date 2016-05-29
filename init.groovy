@@ -40,4 +40,11 @@ listView('mtest') {
     name('mtest-dep')
     name('mtest-web-project')
   }
+  columns {
+      status()
+      weather()
+      name()
+      lastSuccess()
+      lastFailure()
+  }
 }

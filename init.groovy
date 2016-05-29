@@ -35,9 +35,31 @@ job("${basepath}/mtest-web-project") {
       scm('H/2 * * * *')
   }
   steps {
-      maven('clean package')
+      maven('clean package install')
   }
 }
+
+
+
+
+job("${basepath}/mtest-deploy") {
+  scm {
+    git {
+      remote {
+        url("http://10.236.246.220:9090/crodav/mtest-deploy.git")
+      }
+      branch('master')
+    }
+  }
+  triggers {
+      scm('H/2 * * * *')
+  }
+  steps {
+      maven('dependency:copy')
+  }
+}
+
+
 
 
 listView('mtest') {

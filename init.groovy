@@ -1,33 +1,27 @@
+
+
 job("mtest-dep") {
   scm {
-      git {
-          remote {
-            git("http://10.236.246.220:9090/crodav/mtest-dep.git")
-          }
-          createTag(false)
-      }
+    git("http://10.236.246.220:9090/crodav/mtest-dep.git")
   }
   triggers {
-      scm('*/2 * * * *')
+    scm('*/2 * * * *')
   }
   steps {
-      maven('-e clean test install')
+      maven('clean test install')
   }
 }
 
+
+
 job("mtest-web-project") {
   scm {
-      git {
-          remote {
-            git("http://10.236.246.220:9090/crodav/mtest-web-project.git")
-          }
-          createTag(false)
-      }
+    git("http://10.236.246.220:9090/crodav/mtest-web-project.git")
   }
   triggers {
       scm('*/2 * * * *')
   }
   steps {
-      maven('-e clean package')
+      maven('clean package')
   }
 }

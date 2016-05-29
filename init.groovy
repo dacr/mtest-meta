@@ -1,4 +1,6 @@
-job("mtest-dep") {
+def basepath='mtest'
+
+job("${basepath}/mtest-dep") {
   scm {
     git {
       remote {
@@ -17,7 +19,7 @@ job("mtest-dep") {
 
 
 
-job("mtest-web-project") {
+job("${basepath}/mtest-web-project") {
   scm {
     git {
       remote {
@@ -37,8 +39,8 @@ job("mtest-web-project") {
 
 listView('mtest') {
   jobs {
-    name('mtest-dep')
-    name('mtest-web-project')
+    name('${basepath}/mtest-dep')
+    name('${basepath}/mtest-web-project')
   }
   columns {
       status()

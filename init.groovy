@@ -1,6 +1,9 @@
+def config = new HashMap()
+def binding = getBinding()
+config.putAll(binding.getVariables())
+
 def basepath='mtest'
-def repobase='https://github.com/dacr/'
-//def repobase='http://10.236.246.220:9090/crodav'
+def repobase=config.get('REPO_BASEURL', 'https://github.com/dacr/')
 
 folder("${basepath}") {
 }

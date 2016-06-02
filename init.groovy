@@ -83,6 +83,9 @@ job("${basepath}/mtest-loadtest") {
   steps {
       maven('gatling:execute')
   }
+  publishers {
+      archiveGatling()
+  }
 }
 
 

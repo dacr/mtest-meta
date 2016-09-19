@@ -62,7 +62,11 @@ job("${basepath}/mtest-deploy") {
   }
   steps {
       maven('dependency:copy')
-      // TODO - deploy to the integration server
+  }
+  publishers {
+      publishScp('backend') {
+          entry('mtest-web-project.war', '.', true)
+      }
   }
 }
 

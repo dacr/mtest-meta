@@ -94,9 +94,10 @@ job("${basepath}/mtest-loadtest") {
 
 
 
-listView('mtest') {
+listView('${basepath}') {
   jobs {
     name("${basepath}")
+    regex('${basepath}/mtest.*')
   }
   columns {
       status()

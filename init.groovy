@@ -62,7 +62,7 @@ job("${basepath}/mtest-deploy") {
   }
   steps {
       maven('dependency:copy')
-      shell('scp mtest-web-project.war centos@backend:/var/lib/tomcat/webapps/')
+      shell('scp -o stricthostkeychecking=no mtest-web-project.war centos@backend:/var/lib/tomcat/webapps/')
   }
 /*  publishers {
       publishScp('backend') {

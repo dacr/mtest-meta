@@ -99,6 +99,7 @@ listView("${basepath}") {
     name("${basepath}")
     regex("${basepath}/mtest.*")
   }
+  recurse(true)
   columns {
       status()
       weather()
